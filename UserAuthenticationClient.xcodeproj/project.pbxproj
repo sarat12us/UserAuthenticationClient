@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		671986C61D7DC9A400AB30CD /* login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = login.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		671986C61D7DC9A400AB30CD /* UserAuthenticationClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserAuthenticationClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		671986C91D7DC9A400AB30CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		671986CB1D7DC9A400AB30CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		671986CE1D7DC9A400AB30CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		671986BD1D7DC9A400AB30CD = {
 			isa = PBXGroup;
 			children = (
-				671986C81D7DC9A400AB30CD /* login */,
+				671986C81D7DC9A400AB30CD /* UserAuthenticationClient */,
 				671986C71D7DC9A400AB30CD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +50,12 @@
 		671986C71D7DC9A400AB30CD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				671986C61D7DC9A400AB30CD /* login.app */,
+				671986C61D7DC9A400AB30CD /* UserAuthenticationClient.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		671986C81D7DC9A400AB30CD /* login */ = {
+		671986C81D7DC9A400AB30CD /* UserAuthenticationClient */ = {
 			isa = PBXGroup;
 			children = (
 				671986C91D7DC9A400AB30CD /* AppDelegate.swift */,
@@ -67,15 +67,16 @@
 				671986DB1D7DD5CB00AB30CD /* RegisterViewController.swift */,
 				6753B3AA1D7FBAED0002938D /* LoginViewController.swift */,
 			);
+			name = UserAuthenticationClient;
 			path = login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		671986C51D7DC9A400AB30CD /* login */ = {
+		671986C51D7DC9A400AB30CD /* UserAuthenticationClient */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 671986D81D7DC9A400AB30CD /* Build configuration list for PBXNativeTarget "login" */;
+			buildConfigurationList = 671986D81D7DC9A400AB30CD /* Build configuration list for PBXNativeTarget "UserAuthenticationClient" */;
 			buildPhases = (
 				671986C21D7DC9A400AB30CD /* Sources */,
 				671986C31D7DC9A400AB30CD /* Frameworks */,
@@ -85,9 +86,9 @@
 			);
 			dependencies = (
 			);
-			name = login;
+			name = UserAuthenticationClient;
 			productName = login;
-			productReference = 671986C61D7DC9A400AB30CD /* login.app */;
+			productReference = 671986C61D7DC9A400AB30CD /* UserAuthenticationClient.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +106,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 671986C11D7DC9A400AB30CD /* Build configuration list for PBXProject "login" */;
+			buildConfigurationList = 671986C11D7DC9A400AB30CD /* Build configuration list for PBXProject "UserAuthenticationClient" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -118,7 +119,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				671986C51D7DC9A400AB30CD /* login */,
+				671986C51D7DC9A400AB30CD /* UserAuthenticationClient */,
 			);
 		};
 /* End PBXProject section */
@@ -259,8 +260,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = login/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tim.login;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tim.utherAuthenticationClient;
+				PRODUCT_NAME = UserAuthenticationClient;
 			};
 			name = Debug;
 		};
@@ -270,15 +271,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = login/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tim.login;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tim.utherAuthenticationClient;
+				PRODUCT_NAME = UserAuthenticationClient;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		671986C11D7DC9A400AB30CD /* Build configuration list for PBXProject "login" */ = {
+		671986C11D7DC9A400AB30CD /* Build configuration list for PBXProject "UserAuthenticationClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				671986D61D7DC9A400AB30CD /* Debug */,
@@ -287,7 +288,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		671986D81D7DC9A400AB30CD /* Build configuration list for PBXNativeTarget "login" */ = {
+		671986D81D7DC9A400AB30CD /* Build configuration list for PBXNativeTarget "UserAuthenticationClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				671986D91D7DC9A400AB30CD /* Debug */,

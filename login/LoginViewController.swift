@@ -9,15 +9,36 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
+    
+    var message : String = ""
+    
     @IBOutlet weak var userNameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     
+    @IBOutlet weak var messageLbl: UILabel!
+    
+    typealias CompletionHandler = (loginMessage:String) -> Void
+    
     @IBAction func OnLogin(sender: AnyObject) {
         
-      
         
-        let parameters = ["username":"sarat9", "password":"sarat9"] as Dictionary<String, String>
+        let userName = userNameTxt.text
+        let password = passwordTxt.text
+        
+        
+        // Check for empty feilds
+        
+        if ( userName!.isEmpty || password!.isEmpty )
+        {
+            // Diplay alert
+            displayAlertMessage( "All fields are mandatory")
+            return
+            
+        }
+        
+        
+        let parameters = ["username":userNameTxt.text!, "password":passwordTxt.text!] as Dictionary<String, String>
         
         let request = NSMutableURLRequest(URL: NSURL(string:"http://67.205.133.173/userauthentication/public/index.php/api/v1/auth/login")!)
         
@@ -25,6 +46,7 @@ class LoginViewController: UIViewController {
         request.HTTPMethod = "POST"
         
         //Note : Add the corresponding "Content-Type" and "Accept" header. In this example I had used the application/json.
+        
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
@@ -40,8 +62,12 @@ class LoginViewController: UIViewController {
                 if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
                     print("Response: \(json)")
                     
+                    self.message  = json["message"] as! NSString as String
+                    self.displayAlertMessage(self.message)
+                    
                     
                 } else {
+                    
                     let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)// No error thrown, but not NSDictionary
                     print("Error could not parse JSON: \(jsonStr)")
                 }
@@ -53,27 +79,38 @@ class LoginViewController: UIViewController {
         }
         
         task.resume()
+        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func displayAlertMessage(message: String){
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            let myAlert = UIAlertController(title:"Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert);
+            
+            let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.Default){ action in
+                // self.dismissViewControllerAnimated(true, completion:nil);
+            }
+            
+            myAlert.addAction(okAction);
+            self.presentViewController(myAlert, animated:true, completion:nil);
+            
+            self.userNameTxt.text = ""
+            self.passwordTxt.text = ""
+            
+        }
     }
-    */
-
+    
 }

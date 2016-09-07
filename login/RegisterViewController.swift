@@ -9,7 +9,9 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    
+    var message : String = ""
+    
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var userNameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
@@ -27,22 +29,24 @@ class RegisterViewController: UIViewController {
         
         if ( name!.isEmpty || userName!.isEmpty || password!.isEmpty || confirmPassword!.isEmpty)
         {
-           // Diplay alert
+            // Diplay alert
+            displayAlertMessage( "All fields are mandatory")
             return
             
         }
         
         // Check if user passwords matches
         if ( password != confirmPassword )
-        
+            
         {
             // Diplay alert
+            displayAlertMessage( "Passwords do not match")
             return
         }
         
         // Save user data
         
-        let parameters = ["username":"sarat9", "password":"sarat9","name":"sarat9"] as Dictionary<String, String>
+        let parameters = ["username":userName!, "password":password!,"name":name!] as Dictionary<String, String>
         let request = NSMutableURLRequest(URL: NSURL(string: "http://67.205.133.173/userauthentication/public/index.php/api/v1/auth/register")!)
         
         let session = NSURLSession.sharedSession()
@@ -63,6 +67,11 @@ class RegisterViewController: UIViewController {
             do {
                 if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
                     print("Response: \(json)")
+                    
+                    self.message  = json["message"] as! NSString as String
+                    self.displayAlertMessage ( self.message )
+                    
+                    
                 } else {
                     let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)// No error thrown, but not NSDictionary
                     print("Error could not parse JSON: \(jsonStr)")
@@ -76,34 +85,38 @@ class RegisterViewController: UIViewController {
         
         task.resume()
         
+    }
+    
+    func displayAlertMessage(message: String){
         
-        // Display Allert message
-        
+        dispatch_async(dispatch_get_main_queue()) {
+            let myAlert = UIAlertController(title:"Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert);
+            
+            let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.Default){ action in
+                // self.dismissViewControllerAnimated(true, completion:nil);
+            }
+            
+            myAlert.addAction(okAction);
+            self.presentViewController(myAlert, animated:true, completion:nil);
+            
+            
+            self.nameTxt.text = ""
+            self.userNameTxt.text = ""
+            self.passwordTxt.text = ""
+            self.confirmPasswordTxt.text = ""
+            
+        }
     }
     
     override func viewDidLoad() {
-       
+        
         super.viewDidLoad()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func displayAlertMessage(userMessage:String)
-    {
-        
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

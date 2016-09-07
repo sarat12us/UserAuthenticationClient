@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "671986C51D7DC9A400AB30CD"
-               BuildableName = "login.app"
-               BlueprintName = "login"
-               ReferencedContainer = "container:login.xcodeproj">
+               BuildableName = "UserAuthenticationClient.app"
+               BlueprintName = "UserAuthenticationClient"
+               ReferencedContainer = "container:UserAuthenticationClient.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "671986C51D7DC9A400AB30CD"
-            BuildableName = "login.app"
-            BlueprintName = "login"
-            ReferencedContainer = "container:login.xcodeproj">
+            BuildableName = "UserAuthenticationClient.app"
+            BlueprintName = "UserAuthenticationClient"
+            ReferencedContainer = "container:UserAuthenticationClient.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "671986C51D7DC9A400AB30CD"
-            BuildableName = "login.app"
-            BlueprintName = "login"
-            ReferencedContainer = "container:login.xcodeproj">
+            BuildableName = "UserAuthenticationClient.app"
+            BlueprintName = "UserAuthenticationClient"
+            ReferencedContainer = "container:UserAuthenticationClient.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "671986C51D7DC9A400AB30CD"
-            BuildableName = "login.app"
-            BlueprintName = "login"
-            ReferencedContainer = "container:login.xcodeproj">
+            BuildableName = "UserAuthenticationClient.app"
+            BlueprintName = "UserAuthenticationClient"
+            ReferencedContainer = "container:UserAuthenticationClient.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
